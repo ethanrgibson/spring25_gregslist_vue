@@ -7,7 +7,7 @@
   <section class="contatiner">
     <div class="row">
       <div class="col-md-12">
-        <h1>HOUSE N SPOUSES</h1>
+        <h1>HOUSE</h1>
       </div>
     </div>
   </section>
