@@ -3,6 +3,7 @@ import { api } from "./AxiosService.js"
 import { House } from "@/models/House.js"
 import { AppState } from "@/AppState.js"
 
+
 class HouseService {
   async getHouses() {
 
@@ -12,6 +13,13 @@ class HouseService {
 
   }
 
+  async createHouse(houseData) {
+    const response = await api.post('api/houses', houseData)
+
+    const house = new House(response.data)
+
+    AppState.houses.push(house)
+  }
 
 
 }

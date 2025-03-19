@@ -1,5 +1,6 @@
 <script setup>
 import { AppState } from '@/AppState.js';
+import HouseForm from '@/components/HouseForm.vue';
 import HouseListing from '@/components/HouseListing.vue';
 import { houseService } from '@/services/HouseService.js';
 import { logger } from '@/utils/Logger.js';
@@ -38,6 +39,11 @@ async function getHouses() {
     <div class="row">
       <div class="col-md-12">
         <h1 class="text-center display-1 mx-2">HOUSES & BLOUSES</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <HouseForm />
       </div>
     </div>
     <div class="row">
