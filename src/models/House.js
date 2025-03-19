@@ -12,6 +12,7 @@ export class House {
     this.creatorId = data.creatorId
     this.createdAt = new Date(data.createdAt)
     this.id = data.id
+    this.creator = data.creator
 
 
 

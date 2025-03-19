@@ -74,7 +74,7 @@ async function createHouse() {
     <div class="mb-3">
       <label for="houseDescription">Description?</label>
       <input v-model="editableHouseData.description" type="text" name="year" id="houseDescription" required
-        maxlength="10" placeholder="To smell or not to smell...">
+        maxlength="500" placeholder="To smell or not to smell...">
     </div>
     <div class="mb-3">
       <label for="housePicture">Picture of House</label>
