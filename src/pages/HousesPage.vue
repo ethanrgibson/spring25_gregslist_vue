@@ -1,5 +1,6 @@
 <script setup>
 import { AppState } from '@/AppState.js';
+import HouseListing from '@/components/HouseListing.vue';
 import { houseService } from '@/services/HouseService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
@@ -36,14 +37,12 @@ async function getHouses() {
   <section class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>HOUSES & BLOUSES</h1>
+        <h1 class="text-center display-1 mx-2">HOUSES & BLOUSES</h1>
       </div>
-      <div class="row">
-        <div v-for="house in houses" :key="house.id" class="col-md-12">
-          <div>
-            <img :src="house.imgUrl" alt="'Picture of Listed House'" class="img-fluid">
-          </div>
-        </div>
+    </div>
+    <div class="row">
+      <div v-for="house in houses" :key="house.id" class="col-md-12">
+        <HouseListing :houseProp="house" />
       </div>
     </div>
   </section>

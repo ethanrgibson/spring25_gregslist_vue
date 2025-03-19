@@ -1,17 +1,39 @@
 <script setup>
+import { House } from '@/models/House.js';
+
+
+
+defineProps({
+
+  houseProp: { type: House, required: true }
+
+})
+
 
 </script>
 
 
 <template>
-  <section class="contatiner">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>HOUSE</h1>
+  <div class="row shadow-lg rounded mb-3">
+    <div class="col-md-5 px-0">
+      <div>
+        <img :src="houseProp.imgUrl" alt="'Picture of Listed House'" class="house-picture">
       </div>
     </div>
-  </section>
+    <div class="col-md-7">
+      <div>
+        <h2>What</h2>
+      </div>
+    </div>
+  </div>
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.house-picture {
+  max-height: 35dvh;
+  width: 100%;
+  object-fit: cover;
+
+}
+</style>
