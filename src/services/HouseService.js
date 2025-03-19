@@ -9,8 +9,6 @@ class HouseService {
     const response = await api.get('api/houses')
     const houses = response.data.map(pojo => new House(pojo))
     AppState.houses = houses
-    logger.log(houses)
-
 
   }
 

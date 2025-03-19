@@ -1,8 +1,12 @@
 <script setup>
+import { AppState } from '@/AppState.js';
 import { houseService } from '@/services/HouseService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
+
+const houses = computed(() => AppState.houses)
+
 
 onMounted(() => {
 
@@ -35,9 +39,9 @@ async function getHouses() {
         <h1>HOUSES & BLOUSES</h1>
       </div>
       <div class="row">
-        <div class="col-md-12">
+        <div v-for="house in houses" :key="house.id" class="col-md-12">
           <div>
-            <img src="" alt="">
+            <img :src="house.imgUrl" alt="'Picture of Listed House'" class="img-fluid">
           </div>
         </div>
       </div>
