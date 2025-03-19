@@ -1,4 +1,5 @@
 <script setup>
+import { houseService } from '@/services/HouseService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
 import { onMounted } from 'vue';
@@ -14,7 +15,7 @@ onMounted(() => {
 async function getHouses() {
 
   try {
-    logger.log('house waitin')
+    await houseService.getHouses()
   }
   catch (error) {
     Pop.error(error);
