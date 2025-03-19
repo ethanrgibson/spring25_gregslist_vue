@@ -1,7 +1,14 @@
 <script setup>
+
+import { AppState } from '@/AppState.js';
 import { House } from '@/models/House.js';
+import { logger } from '@/utils/Logger.js';
+import { Pop } from '@/utils/Pop.js';
+import { computed } from 'vue';
 
 
+
+const account = computed(() => AppState.account)
 
 defineProps({
 
@@ -9,6 +16,16 @@ defineProps({
 
 })
 
+
+async function deleteHouse(houseId) {
+  try {
+    logger.log('Deleting house', houseId)
+  }
+  catch (error) {
+    Pop.error(error);
+  }
+
+}
 
 </script>
 
@@ -42,6 +59,12 @@ defineProps({
           <p v-if="houseProp.description" class="mx-4">{{ houseProp.description }}</p>
           <p v-else class="mx-4"> <i>No Description</i></p>
         </div>
+      </div>
+      <div>
+        <button v-if="account?.id == houseProp.creatorId" @click="deleteHouse(houseProp.id)"
+          class="btn btn-outline-warning">
+          Delete
+        </button>
       </div>
     </div>
   </div>

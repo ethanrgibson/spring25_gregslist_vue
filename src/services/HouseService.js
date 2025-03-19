@@ -15,11 +15,10 @@ class HouseService {
 
   async createHouse(houseData) {
     const response = await api.post('api/houses', houseData)
-
     const house = new House(response.data)
-
     AppState.houses.push(house)
   }
+
 
 
 }
