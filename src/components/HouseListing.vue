@@ -40,9 +40,7 @@ async function deleteHouse(houseId) {
 <template>
   <div class="row shadow-lg rounded mb-3">
     <div class="col-md-5 px-0">
-      <div>
-        <img :src="houseProp.imgUrl" alt="'Picture of Listed House'" class="house-picture">
-      </div>
+      <img :src="houseProp.imgUrl" alt="'Picture of Listed House" class="house-picture">
     </div>
     <div class="col-md-7">
       <div class="mt-2 d-flex justify-content-around align-items-center">
@@ -68,7 +66,6 @@ async function deleteHouse(houseId) {
         </div>
       </div>
       <div class="d-flex justify-content-between align-items-center">
-        <span>{{ houseProp.createdAt.toLocaleDateString() }}</span>
         <div>
           <button v-if="account?.id == houseProp.creatorId" @click="deleteHouse(houseProp.id)"
             class="btn btn-outline-warning">
@@ -87,11 +84,13 @@ async function deleteHouse(houseId) {
 
 <style lang="scss" scoped>
 .house-picture {
-  max-height: 35dvh;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 
 }
+
+
 
 .profile-pic {
   max-height: 4em;
