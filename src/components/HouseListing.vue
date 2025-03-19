@@ -21,8 +21,27 @@ defineProps({
       </div>
     </div>
     <div class="col-md-7">
+      <div class="mt-2 d-flex justify-content-around align-items-center">
+        <b class="fs-3">Built in {{ houseProp.year }}</b>
+        <b class="fs-3">{{ 'Price: $' + houseProp.price.toLocaleString() }}</b>
+        <b class="fs-3">{{ 'Levels: ' + houseProp.levels }}</b>
+      </div>
+      <br>
+      <div class="mx-3">
+        <div>
+          <span class="fs-5"><b>Bathrooms: </b>{{ houseProp.bathrooms }}</span>
+        </div>
+        <div>
+          <span class="fs-5"><b>Bedrooms: </b>{{ houseProp.bedrooms }}</span>
+        </div>
+      </div>
+      <br>
       <div>
-        <h2>What</h2>
+        <span class="mx-3 fs-5 fw-bold ">Description:</span>
+        <div class="text-center mt-3">
+          <p v-if="houseProp.description" class="mx-4">{{ houseProp.description }}</p>
+          <p v-else class="mx-4"> <i>No Description</i></p>
+        </div>
       </div>
     </div>
   </div>
